@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currency Converter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<main class="container">
+		<h1>Currency Converter</h1>
+		<p class="subtitle">Convert currencies using live exchange rates.</p>
+
+		<section class="converter-card">
+			<label for="apiKey">API Key</label> <input type="password"
+				id="apiKey" placeholder="Enter your application API key"
+				autocomplete="off"> <label for="amount">Amount</label>
+			<input type="number" id="amount" placeholder="Enter amount"
+				min="0.01" step="any" value="100">
+
+			<div class="currency-row">
+				<div>
+					<label for="fromCurrency">From</label> <select id="fromCurrency">
+						<option value="USD">USD</option>
+						<option value="INR">INR</option>
+						<option value="EUR">EUR</option>
+						<option value="GBP">GBP</option>
+						<option value="JPY">JPY</option>
+						<option value="AUD">AUD</option>
+						<option value="CAD">CAD</option>
+					</select>
+				</div>
+
+				<button type="button" id="swapButton" aria-label="Swap currencies">
+					⇄</button>
+
+				<div>
+					<label for="toCurrency">To</label> <select id="toCurrency">
+						<option value="INR" selected>INR</option>
+						<option value="USD">USD</option>
+						<option value="EUR">EUR</option>
+						<option value="GBP">GBP</option>
+						<option value="JPY">JPY</option>
+						<option value="AUD">AUD</option>
+						<option value="CAD">CAD</option>
+					</select>
+				</div>
+			</div>
+
+			<button type="button" id="convertButton" class="convert-button">
+				Convert Currency</button>
+
+			<p id="message" role="status" aria-live="polite"></p>
+
+			<div id="result" class="result" hidden>
+				<p>Converted Amount</p>
+				<h2 id="convertedAmount"></h2>
+				<p id="conversionDetails"></p>
+			</div>
+		</section>
+
+		<section class="history-section">
+			<h2>Recent Conversions</h2>
+			<button type="button" id="historyButton" class="history-button">
+				Load History</button>
+			<div id="historyList"></div>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
