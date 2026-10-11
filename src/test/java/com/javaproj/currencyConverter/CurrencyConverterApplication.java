@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 		"spring.datasource.driver-class-name=org.h2.Driver",
 		"spring.datasource.username=sa", "spring.datasource.password=",
 		"spring.jpa.hibernate.ddl-auto=create-drop"})
+
 class CurrencyConverterApplicationTests {
 
 	@Test
